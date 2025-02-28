@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/personal-website": {},
+    "/personal-website/contato": {},
+    "/personal-website/projetos": {},
+    "/personal-website/sobre": {},
+    "/personal-website/tecnologias": {}
+  }
+}
