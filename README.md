@@ -151,6 +151,10 @@ Durante o desenvolvimento, mantive um foco especial em:
 - **SEO**: Implementação de meta tags e estrutura semântica
 - **Código Limpo**: Seguindo princípios SOLID e boas práticas
 
+## 🚧 Projeto em Desenvolvimento
+Este portfólio ainda está em constante aprimoramento. Novas funcionalidades, melhorias visuais e conteúdos serão adicionados em breve.
+Fique à vontade para enviar feedback, sugestões ou contribuir com o projeto!
+
 ## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para detalhes.
