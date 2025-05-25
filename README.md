@@ -20,14 +20,11 @@ Este projeto é meu portfólio pessoal, criado para demonstrar minhas habilidade
 
 # 🖼️ Imagens do Meu Site
 
-## 🔐 Tela de Login
-![Tela de Login](src/assets/images/TelaLogin.png)
-
-## 📝 Tela de Cadastro
-![Tela de Cadastro](src/assets/images/TelaCadastro.png)
-
 ## 🏠 Tela Inicial
-![Tela Inicial](src/assets/images/TelaInicial.png)
+![🏠 Tela Inicial](src/assets/images/Tela01.PNG)
+
+## 📞 Tela de Contato
+![Tela de Contato](src/assets/images/Tela2.PNG)
 
 ## ⚙️ Painel Administrativo
 ![Painel Administrativo](src/assets/images/PainelAdministrativo.PNG)
