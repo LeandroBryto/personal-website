@@ -18,6 +18,19 @@ Este projeto é meu portfólio pessoal, criado para demonstrar minhas habilidade
 - **Painel Administrativo**: Área protegida para edição de conteúdo
 - **Seções Organizadas**: Home, Sobre Mim, Experiência, Projetos, Habilidades, Blog e Contato
 
+# 🖼️ Imagens do Meu Site
+
+## 🔐 Tela de Login
+![Tela de Login](src/assets/images/TelaLogin.png)
+
+## 📝 Tela de Cadastro
+![Tela de Cadastro](src/assets/images/TelaCadastro.png)
+
+## 🏠 Tela Inicial
+![Tela Inicial](src/assets/images/TelaInicial.png)
+
+## ⚙️ Painel Administrativo
+![Painel Administrativo](src/assets/images/PainelAdministrativo.png)
 ## 🛠️ Tecnologias Utilizadas
 
 - **Angular 19**: Framework frontend para construção da interface
