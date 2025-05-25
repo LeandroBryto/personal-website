@@ -30,7 +30,7 @@ Este projeto é meu portfólio pessoal, criado para demonstrar minhas habilidade
 ![Tela Inicial](src/assets/images/TelaInicial.png)
 
 ## ⚙️ Painel Administrativo
-![Painel Administrativo](src/assets/images/PainelAdministrativo.png)
+![Painel Administrativo](src/assets/images/PainelAdministrativo.PNG)
 ## 🛠️ Tecnologias Utilizadas
 
 - **Angular 19**: Framework frontend para construção da interface
