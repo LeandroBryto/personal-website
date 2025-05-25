@@ -1,0 +1,157 @@
+<section class="contact-section">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
+        <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+        <div class="contact-info">
+          <h3 class="mb-4">Vamos conversar!</h3>
+          <p class="mb-4">Estou disponível para novas oportunidades, projetos freelance ou apenas para trocar ideias sobre desenvolvimento de software. Sinta-se à vontade para entrar em contato através do formulário ou diretamente pelos canais abaixo.</p>
+          
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="content">
+              <h4>Email</h4>
+              <p><a href="mailto:leandrobarreto.barreto&#64;gmail.com">leandrobarreto.barreto&#64;gmail.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="content">
+              <h4>Localização</h4>
+              <p>Brasília, DF - Brasil</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="content">
+              <h4>Telefone</h4>
+              <p><a href="tel:+5561993204481">(61) 99320-4481</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="content">
+              <h4>Disponibilidade</h4>
+              <p>Aberto a novas oportunidades</p>
+            </div>
+          </div>
+          
+          <div class="social-links mt-4">
+            <a href="https://www.linkedin.com/in/leandro-barreto-5128a223a/" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/leandrobritodev" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <!-- Link do Twitter removido pois não foi fornecido -->
+            <a href="https://www.instagram.com/leandro_britodev10?igsh=azZqNnhvNGYzbmg4&utm_source=qr" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="contact-form">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="alert alert-success" *ngIf="formSuccess">
+              <i class="fas fa-check-circle me-2"></i> Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.
+            </div>
+            
+            <div class="alert alert-danger" *ngIf="formError">
+              <i class="fas fa-exclamation-circle me-2"></i> Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-group">
+                  <label for="name">Nome</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="name" 
+                    formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+                    placeholder="Seu nome">
+                  <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                    <div *ngIf="f['name'].errors['required']">Nome é obrigatório</div>
+                    <div *ngIf="f['name'].errors['minlength']">Nome deve ter pelo menos 3 caracteres</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6 mb-4">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                    placeholder="Seu email">
+                  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email é obrigatório</div>
+                    <div *ngIf="f['email'].errors['email']">Email inválido</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group mb-4">
+              <label for="subject">Assunto</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="subject" 
+                formControlName="subject"
+                [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }"
+                placeholder="Assunto da mensagem">
+              <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+                <div *ngIf="f['subject'].errors['required']">Assunto é obrigatório</div>
+              </div>
+            </div>
+            
+            <div class="form-group mb-4">
+              <label for="message">Mensagem</label>
+              <textarea 
+                class="form-control" 
+                id="message" 
+                rows="5" 
+                formControlName="message"
+                [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+                placeholder="Sua mensagem"></textarea>
+              <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                <div *ngIf="f['message'].errors['required']">Mensagem é obrigatória</div>
+                <div *ngIf="f['message'].errors['minlength']">Mensagem deve ter pelo menos 10 caracteres</div>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" [disabled]="submitted">
+              <span *ngIf="submitted" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              <i *ngIf="!submitted" class="fas fa-paper-plane me-2"></i>
+              {{ submitted ? 'Enviando...' : 'Enviar Mensagem' }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

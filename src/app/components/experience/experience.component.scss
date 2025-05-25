@@ -1,0 +1,225 @@
+.experience-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 15px;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      margin-left: -1.5px;
+      background-color: #e9ecef;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      
+      .timeline-badge {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.4em;
+        line-height: 50px;
+        background-color: #0dcaf0;
+        color: #fff;
+        z-index: 100;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .timeline-panel {
+        position: relative;
+        float: left;
+        width: 46%;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          transform: translateY(-5px);
+        }
+        
+        &:before {
+          content: '';
+          position: absolute;
+          top: 26px;
+          right: -15px;
+          width: 0;
+          height: 0;
+          border-top: 15px solid transparent;
+          border-left: 15px solid #fff;
+          border-bottom: 15px solid transparent;
+        }
+      }
+      
+      &:nth-child(even) {
+        .timeline-panel {
+          float: right;
+          
+          &:before {
+            left: -15px;
+            right: auto;
+            border-left: 0;
+            border-right: 15px solid #fff;
+          }
+        }
+      }
+      
+      .timeline-heading {
+        margin-bottom: 20px;
+        
+        .timeline-title {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #212529;
+          margin-bottom: 5px;
+        }
+        
+        .timeline-date {
+          font-size: 0.9rem;
+          color: #6c757d;
+          font-weight: 500;
+          padding: 5px 12px;
+          background-color: rgba(13, 202, 240, 0.1);
+          border-radius: 20px;
+        }
+        
+        .timeline-subtitle {
+          font-size: 1rem;
+          color: #495057;
+          margin-bottom: 0;
+        }
+      }
+      
+      .timeline-body {
+        p {
+          color: #6c757d;
+          line-height: 1.7;
+          margin-bottom: 15px;
+        }
+        
+        h5 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #212529;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+        
+        ul {
+          padding-left: 20px;
+          margin-bottom: 20px;
+          
+          li {
+            color: #6c757d;
+            margin-bottom: 8px;
+          }
+        }
+        
+        .timeline-tech {
+          margin-top: 20px;
+          
+          .tech-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            background-color: rgba(13, 202, 240, 0.1);
+            color: #0dcaf0;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .experience-section {
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .timeline {
+      &:before {
+        left: 40px;
+      }
+      
+      .timeline-item {
+        .timeline-badge {
+          left: 40px;
+          margin-left: 0;
+        }
+        
+        .timeline-panel {
+          width: calc(100% - 90px);
+          float: right;
+          
+          &:before {
+            left: -15px;
+            right: auto;
+            border-left: 0;
+            border-right: 15px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .experience-section {
+    padding: 70px 0;
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .timeline-heading {
+      .timeline-title {
+        font-size: 1.2rem;
+      }
+      
+      .timeline-date {
+        margin-top: 10px;
+      }
+    }
+  }
+}

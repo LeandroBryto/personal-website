@@ -1,0 +1,205 @@
+<div class="dashboard-container">
+  <!-- Header -->
+  <header class="dashboard-header">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center py-3">
+        <h1 class="dashboard-title">Painel Administrativo</h1>
+        <button class="btn btn-outline-danger" (click)="logout()">
+          <i class="fas fa-sign-out-alt me-2"></i>Sair
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <div class="container py-4">
+    <div class="alert alert-success" *ngIf="saveSuccess">
+      <i class="fas fa-check-circle me-2"></i> Alterações salvas com sucesso!
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="saveError">
+      <i class="fas fa-exclamation-circle me-2"></i> Erro ao salvar alterações. Tente novamente.
+    </div>
+    
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4">
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'profile'" (click)="setActiveTab('profile')">
+          <i class="fas fa-user me-2"></i>Perfil
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'experience'" (click)="setActiveTab('experience')">
+          <i class="fas fa-briefcase me-2"></i>Experiência
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'projects'" (click)="setActiveTab('projects')">
+          <i class="fas fa-code me-2"></i>Projetos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'blog'" (click)="setActiveTab('blog')">
+          <i class="fas fa-blog me-2"></i>Blog
+        </a>
+      </li>
+    </ul>
+    
+    <!-- Profile Tab -->
+    <div class="tab-content" *ngIf="activeTab === 'profile'">
+      <h3 class="mb-4">Editar Perfil</h3>
+      <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="title">Título Profissional</label>
+              <input type="text" class="form-control" id="title" formControlName="title">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <label for="location">Localização</label>
+              <input type="text" class="form-control" id="location" formControlName="location">
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="text" class="form-control" id="phone" formControlName="phone">
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group mb-4">
+          <label for="about">Sobre Mim</label>
+          <textarea class="form-control" id="about" rows="6" formControlName="about"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save me-2"></i>Salvar Alterações
+        </button>
+      </form>
+    </div>
+    
+    <!-- Experience Tab -->
+    <div class="tab-content" *ngIf="activeTab === 'experience'">
+      <h3 class="mb-4">Editar Experiência</h3>
+      <form [formGroup]="experienceForm" (ngSubmit)="saveExperience()">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Experiência 1</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="company1">Empresa</label>
+                  <input type="text" class="form-control" id="company1" formControlName="company1">
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="position1">Cargo</label>
+                  <input type="text" class="form-control" id="position1" formControlName="position1">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group mb-3">
+              <label for="period1">Período</label>
+              <input type="text" class="form-control" id="period1" formControlName="period1">
+            </div>
+            
+            <div class="form-group">
+              <label for="description1">Descrição</label>
+              <textarea class="form-control" id="description1" rows="4" formControlName="description1"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save me-2"></i>Salvar Alterações
+        </button>
+      </form>
+    </div>
+    
+    <!-- Projects Tab -->
+    <div class="tab-content" *ngIf="activeTab === 'projects'">
+      <h3 class="mb-4">Editar Projetos</h3>
+      <form [formGroup]="projectsForm" (ngSubmit)="saveProjects()">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Projeto 1</h5>
+          </div>
+          <div class="card-body">
+            <div class="form-group mb-3">
+              <label for="project1">Nome do Projeto</label>
+              <input type="text" class="form-control" id="project1" formControlName="project1">
+            </div>
+            
+            <div class="form-group mb-3">
+              <label for="projectUrl1">URL do Projeto (GitHub)</label>
+              <input type="text" class="form-control" id="projectUrl1" formControlName="projectUrl1">
+            </div>
+            
+            <div class="form-group">
+              <label for="projectDesc1">Descrição</label>
+              <textarea class="form-control" id="projectDesc1" rows="4" formControlName="projectDesc1"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save me-2"></i>Salvar Alterações
+        </button>
+      </form>
+    </div>
+    
+    <!-- Blog Tab -->
+    <div class="tab-content" *ngIf="activeTab === 'blog'">
+      <h3 class="mb-4">Editar Blog</h3>
+      <form [formGroup]="blogForm" (ngSubmit)="saveBlog()">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Artigo 1</h5>
+          </div>
+          <div class="card-body">
+            <div class="form-group mb-3">
+              <label for="article1">Título do Artigo</label>
+              <input type="text" class="form-control" id="article1" formControlName="article1">
+            </div>
+            
+            <div class="form-group mb-3">
+              <label for="articleUrl1">URL do Artigo (Link "Leia Mais")</label>
+              <input type="text" class="form-control" id="articleUrl1" formControlName="articleUrl1">
+            </div>
+            
+            <div class="form-group">
+              <label for="articleDesc1">Descrição</label>
+              <textarea class="form-control" id="articleDesc1" rows="4" formControlName="articleDesc1"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save me-2"></i>Salvar Alterações
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

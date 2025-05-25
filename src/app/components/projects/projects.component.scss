@@ -1,0 +1,131 @@
+.projects-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 15px;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      
+      .project-image .project-overlay {
+        opacity: 1;
+      }
+    }
+    
+    .project-image {
+      position: relative;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 202, 240, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+    
+    .project-content {
+      padding: 25px;
+      
+      .project-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 15px;
+      }
+      
+      .project-description {
+        color: #6c757d;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      
+      .project-tech {
+        .tech-tag {
+          display: inline-block;
+          padding: 5px 12px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          background-color: rgba(13, 202, 240, 0.1);
+          color: #0dcaf0;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  
+  .btn-outline-primary {
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+    padding: 10px 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #0dcaf0;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .projects-section {
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .project-card {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-section {
+    padding: 70px 0;
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+}

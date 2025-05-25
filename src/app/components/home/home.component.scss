@@ -1,0 +1,185 @@
+.home-section {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  overflow: hidden;
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .greeting {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #0dcaf0;
+  }
+  
+  .name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #fff, #0dcaf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .typed-container {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    
+    .typed-prefix {
+      font-weight: 300;
+    }
+    
+    .typed-text {
+      font-weight: 600;
+      color: #0dcaf0;
+    }
+  }
+  
+  .headline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    .btn {
+      padding: 10px 25px;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      
+      &.btn-primary {
+        background-color: #0dcaf0;
+        border-color: #0dcaf0;
+        
+        &:hover {
+          background-color: darken(#0dcaf0, 10%);
+          border-color: darken(#0dcaf0, 10%);
+          transform: translateY(-3px);
+        }
+      }
+      
+      &.btn-outline-light {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+  
+  .social-icons {
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0dcaf0;
+        transform: translateY(-3px);
+      }
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .profile-image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: url('https://media.licdn.com/dms/image/v2/D4D03AQFnUhYCb4FauQ/profile-displayphoto-shrink_800_800/B4DZWMWkZTHAAg-/0/1741816482004') center/cover no-repeat;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 4px solid rgba(13, 202, 240, 0.3);
+    }
+  }
+  
+  .scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    
+    .scroll-down-link {
+      display: block;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      animation: bounce 2s infinite;
+      
+      &:hover {
+        color: #0dcaf0;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 991px) {
+  .home-section {
+    .name {
+      font-size: 3rem;
+    }
+    
+    .typed-container {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home-section {
+    .name {
+      font-size: 2.5rem;
+    }
+    
+    .typed-container {
+      font-size: 1.3rem;
+    }
+  }
+}

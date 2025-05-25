@@ -1,0 +1,61 @@
+<section class="login-section">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="login-card">
+          <div class="text-center mb-4">
+            <h2 class="section-title">Painel Administrativo</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="text-muted">Faça login para gerenciar seu portfólio</p>
+          </div>
+          
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="alert alert-danger" *ngIf="loginError">
+              <i class="fas fa-exclamation-circle me-2"></i> Usuário ou senha incorretos. Tente novamente.
+            </div>
+            
+            <div class="form-group mb-3">
+              <label for="username">Usuário</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="username" 
+                formControlName="username"
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+                placeholder="Digite seu usuário">
+              <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors['required']">Usuário é obrigatório</div>
+              </div>
+            </div>
+            
+            <div class="form-group mb-4">
+              <label for="password">Senha</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                placeholder="Digite sua senha">
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Senha é obrigatória</div>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100" [disabled]="submitted">
+              <span *ngIf="submitted" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              <i *ngIf="!submitted" class="fas fa-sign-in-alt me-2"></i>
+              {{ submitted ? 'Entrando...' : 'Entrar' }}
+            </button>
+            
+            <div class="text-center mt-3">
+              <a routerLink="/" class="text-muted">
+                <i class="fas fa-arrow-left me-1"></i> Voltar ao site
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

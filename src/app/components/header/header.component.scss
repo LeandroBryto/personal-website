@@ -1,0 +1,74 @@
+header {
+  background-color: rgba(33, 37, 41, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  .navbar {
+    padding: 15px 0;
+    
+    &.scrolled {
+      padding: 8px 0;
+    }
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    
+    &:hover {
+      color: #0dcaf0;
+    }
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 5px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &:hover, &.active {
+      color: #0dcaf0;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0dcaf0;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after, &.active::after {
+      width: 100%;
+    }
+  }
+  
+  .navbar-toggler {
+    border: none;
+    padding: 0;
+    
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(33, 37, 41, 0.98);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+    .nav-link {
+      padding: 10px 0;
+      margin: 0;
+    }
+  }
+}

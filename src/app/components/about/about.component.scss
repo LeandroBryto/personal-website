@@ -1,0 +1,142 @@
+.about-section {
+  padding: 100px 0;
+  background-color: #f8f9fa;
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 15px;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  .about-image {
+    position: relative;
+    
+    img {
+      border: 5px solid #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+  
+  .about-content {
+    h3 {
+      font-weight: 700;
+      color: #212529;
+      position: relative;
+      padding-bottom: 15px;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #0dcaf0;
+      }
+    }
+    
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #495057;
+    }
+    
+    p {
+      color: #6c757d;
+      line-height: 1.8;
+    }
+    
+    .personal-info {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      
+      ul li {
+        margin-bottom: 10px;
+        color: #6c757d;
+        
+        strong {
+          color: #212529;
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    .cta-buttons {
+      .btn {
+        padding: 10px 25px;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        
+        &.btn-primary {
+          background-color: #0dcaf0;
+          border-color: #0dcaf0;
+          
+          &:hover {
+            background-color: darken(#0dcaf0, 10%);
+            border-color: darken(#0dcaf0, 10%);
+            transform: translateY(-3px);
+          }
+        }
+        
+        &.btn-outline-secondary {
+          &:hover {
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .about-section {
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .about-image {
+      margin-bottom: 30px;
+      text-align: center;
+      
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 70px 0;
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .about-image img {
+      max-width: 100%;
+    }
+    
+    .personal-info .col-md-6:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
