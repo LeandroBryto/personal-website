@@ -40,8 +40,8 @@ Este projeto é meu portfólio pessoal, criado para demonstrar minhas habilidade
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/LeandroBryto/personal-website.git
+cd personal-website
 ```
 
 2. Instale as dependências:
